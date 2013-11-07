@@ -44,11 +44,12 @@ public class ApiClient {
     }
 
     public ApiClient(String pkey) {
-        this(pkey, null, null);
+        this.pkey = pkey;
     }
 
     public ApiClient(String pkey, String bpath) {
-        this(pkey, bpath, null);
+        this.pkey = pkey;
+        this.bpath = bpath;
     }
 
     public ApiClient(String pkey, String bpath, String cid) {
