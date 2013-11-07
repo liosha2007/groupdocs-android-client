@@ -60,7 +60,7 @@ public class ApiClient {
     public static String sign(String pkey, String toSign) throws Exception {
         Mac mac = Mac.getInstance(SIGN_ALG);
         mac.init(new SecretKeySpec(pkey.getBytes(ENC), SIGN_ALG));
-        String signature = new String(Base64.encode(mac.doFinal(toSign.getBytes(ENC)), Base64.DEFAULT), ENC);
+        String signature = new String(Base64.encode(mac.doFinal(toSign.getBytes(ENC)), Base64.NO_WRAP), ENC);
         if (signature.endsWith("=")) {
             signature = signature.substring(0, signature.length() - 1);
         }
