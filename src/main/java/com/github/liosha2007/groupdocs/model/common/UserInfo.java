@@ -1,4 +1,4 @@
-package com.github.liosha2007.groupdocs.model;
+package com.github.liosha2007.groupdocs.model.common;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -775,72 +775,74 @@ public class UserInfo {
 
     @Override
     public String toString() {
-        return "UserInfo{" +
-                "nickname='" + nickname + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", pkey='" + pkey + '\'' +
-                ", pswd_salt='" + pswd_salt + '\'' +
-                ", claimed_id='" + claimed_id + '\'' +
-                ", token='" + token + '\'' +
-                ", storage=" + storage +
-                ", photo=" + photo +
-                ", active=" + active +
-                ", trial=" + trial +
-                ", news_eanbled=" + news_eanbled +
-                ", alerts_eanbled=" + alerts_eanbled +
-                ", support_eanbled=" + support_eanbled +
-                ", support_email='" + support_email + '\'' +
-                ", annotation_branded=" + annotation_branded +
-                ", viewer_branded=" + viewer_branded +
-                ", is_real_time_broadcast_enabled=" + is_real_time_broadcast_enabled +
-                ", is_scroll_broadcast_enabled=" + is_scroll_broadcast_enabled +
-                ", is_zoom_broadcast_enabled=" + is_zoom_broadcast_enabled +
-                ", annotation_logo=" + annotation_logo +
-                ", pointer_tool_cursor=" + pointer_tool_cursor +
-                ", annotation_header_options=" + annotation_header_options +
-                ", is_annotation_navigation_widget_enabled=" + is_annotation_navigation_widget_enabled +
-                ", is_annotation_zoom_widget_enabled=" + is_annotation_zoom_widget_enabled +
-                ", is_annotation_download_widget_enabled=" + is_annotation_download_widget_enabled +
-                ", is_annotation_print_widget_enabled=" + is_annotation_print_widget_enabled +
-                ", is_annotation_help_widget_enabled=" + is_annotation_help_widget_enabled +
-                ", is_right_panel_enabled=" + is_right_panel_enabled +
-                ", is_thumbnails_panel_enabled=" + is_thumbnails_panel_enabled +
-                ", is_standard_header_always_shown=" + is_standard_header_always_shown +
-                ", is_toolbar_enabled=" + is_toolbar_enabled +
-                ", is_text_annotation_button_enabled=" + is_text_annotation_button_enabled +
-                ", is_rectangle_annotation_button_enabled=" + is_rectangle_annotation_button_enabled +
-                ", is_point_annotation_button_enabled=" + is_point_annotation_button_enabled +
-                ", is_strikeout_annotation_button_enabled=" + is_strikeout_annotation_button_enabled +
-                ", is_polyline_annotation_button_enabled=" + is_polyline_annotation_button_enabled +
-                ", is_typewriter_annotation_button_enabled=" + is_typewriter_annotation_button_enabled +
-                ", is_watermark_annotation_button_enabled=" + is_watermark_annotation_button_enabled +
-                ", is_annotation_document_name_shown=" + is_annotation_document_name_shown +
-                ", annotation_navigation_icons=" + annotation_navigation_icons +
-                ", annotation_tool_icons=" + annotation_tool_icons +
-                ", annotation_background_color=" + annotation_background_color +
-                ", viewer_logo=" + viewer_logo +
-                ", viewer_options=" + viewer_options +
-                ", is_viewer_navigation_widget_enabled=" + is_viewer_navigation_widget_enabled +
-                ", is_viewer_zoom_widget_enabled=" + is_viewer_zoom_widget_enabled +
-                ", is_viewer_download_widget_enabled=" + is_viewer_download_widget_enabled +
-                ", is_viewer_print_widget_enabled=" + is_viewer_print_widget_enabled +
-                ", is_viewer_help_widget_enabled=" + is_viewer_help_widget_enabled +
-                ", is_viewer_document_name_shown=" + is_viewer_document_name_shown +
-                ", isviewer_right_mouse_button_menu_enabled=" + isviewer_right_mouse_button_menu_enabled +
-                ", signedupOn=" + signedupOn +
-                ", signedinOn=" + signedinOn +
-                ", signin_count=" + signin_count +
-                ", roles=" + roles +
-                ", signature_watermark_enabled=" + signature_watermark_enabled +
-                ", signature_desktop_notifications=" + signature_desktop_notifications +
-                ", webhook_notification_retries=" + webhook_notification_retries +
-                ", webhook_notification_failed_recipients='" + webhook_notification_failed_recipients + '\'' +
-                ", signature_color='" + signature_color + '\'' +
-                ", id=" + id +
-                ", guid='" + guid + '\'' +
-                ", primary_email='" + primary_email + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder();
+        sb.append("UserInfo");
+        sb.append("{nickname='").append(nickname).append('\'');
+        sb.append(", firstname='").append(firstname).append('\'');
+        sb.append(", lastname='").append(lastname).append('\'');
+        sb.append(", pkey='").append(pkey).append('\'');
+        sb.append(", pswd_salt='").append(pswd_salt).append('\'');
+        sb.append(", claimed_id='").append(claimed_id).append('\'');
+        sb.append(", token='").append(token).append('\'');
+        sb.append(", storage=").append(storage);
+        sb.append(", photo=").append(photo);
+        sb.append(", active=").append(active);
+        sb.append(", trial=").append(trial);
+        sb.append(", news_eanbled=").append(news_eanbled);
+        sb.append(", alerts_eanbled=").append(alerts_eanbled);
+        sb.append(", support_eanbled=").append(support_eanbled);
+        sb.append(", support_email='").append(support_email).append('\'');
+        sb.append(", annotation_branded=").append(annotation_branded);
+        sb.append(", viewer_branded=").append(viewer_branded);
+        sb.append(", is_real_time_broadcast_enabled=").append(is_real_time_broadcast_enabled);
+        sb.append(", is_scroll_broadcast_enabled=").append(is_scroll_broadcast_enabled);
+        sb.append(", is_zoom_broadcast_enabled=").append(is_zoom_broadcast_enabled);
+        sb.append(", annotation_logo=").append(annotation_logo);
+        sb.append(", pointer_tool_cursor=").append(pointer_tool_cursor);
+        sb.append(", annotation_header_options=").append(annotation_header_options);
+        sb.append(", is_annotation_navigation_widget_enabled=").append(is_annotation_navigation_widget_enabled);
+        sb.append(", is_annotation_zoom_widget_enabled=").append(is_annotation_zoom_widget_enabled);
+        sb.append(", is_annotation_download_widget_enabled=").append(is_annotation_download_widget_enabled);
+        sb.append(", is_annotation_print_widget_enabled=").append(is_annotation_print_widget_enabled);
+        sb.append(", is_annotation_help_widget_enabled=").append(is_annotation_help_widget_enabled);
+        sb.append(", is_right_panel_enabled=").append(is_right_panel_enabled);
+        sb.append(", is_thumbnails_panel_enabled=").append(is_thumbnails_panel_enabled);
+        sb.append(", is_standard_header_always_shown=").append(is_standard_header_always_shown);
+        sb.append(", is_toolbar_enabled=").append(is_toolbar_enabled);
+        sb.append(", is_text_annotation_button_enabled=").append(is_text_annotation_button_enabled);
+        sb.append(", is_rectangle_annotation_button_enabled=").append(is_rectangle_annotation_button_enabled);
+        sb.append(", is_point_annotation_button_enabled=").append(is_point_annotation_button_enabled);
+        sb.append(", is_strikeout_annotation_button_enabled=").append(is_strikeout_annotation_button_enabled);
+        sb.append(", is_polyline_annotation_button_enabled=").append(is_polyline_annotation_button_enabled);
+        sb.append(", is_typewriter_annotation_button_enabled=").append(is_typewriter_annotation_button_enabled);
+        sb.append(", is_watermark_annotation_button_enabled=").append(is_watermark_annotation_button_enabled);
+        sb.append(", is_annotation_document_name_shown=").append(is_annotation_document_name_shown);
+        sb.append(", annotation_navigation_icons=").append(annotation_navigation_icons);
+        sb.append(", annotation_tool_icons=").append(annotation_tool_icons);
+        sb.append(", annotation_background_color=").append(annotation_background_color);
+        sb.append(", viewer_logo=").append(viewer_logo);
+        sb.append(", viewer_options=").append(viewer_options);
+        sb.append(", is_viewer_navigation_widget_enabled=").append(is_viewer_navigation_widget_enabled);
+        sb.append(", is_viewer_zoom_widget_enabled=").append(is_viewer_zoom_widget_enabled);
+        sb.append(", is_viewer_download_widget_enabled=").append(is_viewer_download_widget_enabled);
+        sb.append(", is_viewer_print_widget_enabled=").append(is_viewer_print_widget_enabled);
+        sb.append(", is_viewer_help_widget_enabled=").append(is_viewer_help_widget_enabled);
+        sb.append(", is_viewer_document_name_shown=").append(is_viewer_document_name_shown);
+        sb.append(", isviewer_right_mouse_button_menu_enabled=").append(isviewer_right_mouse_button_menu_enabled);
+        sb.append(", signedupOn=").append(signedupOn);
+        sb.append(", signedinOn=").append(signedinOn);
+        sb.append(", signin_count=").append(signin_count);
+        sb.append(", roles=").append(roles);
+        sb.append(", signature_watermark_enabled=").append(signature_watermark_enabled);
+        sb.append(", signature_desktop_notifications=").append(signature_desktop_notifications);
+        sb.append(", webhook_notification_retries=").append(webhook_notification_retries);
+        sb.append(", webhook_notification_failed_recipients='").append(webhook_notification_failed_recipients).append('\'');
+        sb.append(", signature_color='").append(signature_color).append('\'');
+        sb.append(", id=").append(id);
+        sb.append(", guid='").append(guid).append('\'');
+        sb.append(", primary_email='").append(primary_email).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
 

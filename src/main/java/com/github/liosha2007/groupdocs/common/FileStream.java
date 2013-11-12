@@ -3,9 +3,7 @@ package com.github.liosha2007.groupdocs.common;
 import org.apache.http.HttpResponse;
 
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.ParseException;
 
 public class FileStream {
 

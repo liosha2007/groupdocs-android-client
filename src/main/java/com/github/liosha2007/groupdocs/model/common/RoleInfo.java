@@ -1,4 +1,4 @@
-package com.github.liosha2007.groupdocs.model;
+package com.github.liosha2007.groupdocs.model.common;
 
 public class RoleInfo {
     private Double id = null;
@@ -42,10 +42,12 @@ public class RoleInfo {
 
     @Override
     public String toString() {
-        return "RoleInfo{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder();
+        sb.append("RoleInfo");
+        sb.append("{id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
 

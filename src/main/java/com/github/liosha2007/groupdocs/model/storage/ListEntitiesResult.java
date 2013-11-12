@@ -1,4 +1,7 @@
-package com.github.liosha2007.groupdocs.model;
+package com.github.liosha2007.groupdocs.model.storage;
+
+import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
+import com.github.liosha2007.groupdocs.model.common.RemoteSystemFolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +9,8 @@ import java.util.List;
 public class ListEntitiesResult {
     private String path = null;
     private Integer count = null;
-    private List<FileSystemFolder> folders = new ArrayList<FileSystemFolder>();
-    private List<FileSystemDocument> files = new ArrayList<FileSystemDocument>();
+    private List<RemoteSystemFolder> folders = new ArrayList<RemoteSystemFolder>();
+    private List<RemoteSystemDocument> files = new ArrayList<RemoteSystemDocument>();
 
     public String getPath() {
         return path;
@@ -25,19 +28,19 @@ public class ListEntitiesResult {
         this.count = count;
     }
 
-    public List<FileSystemFolder> getFolders() {
+    public List<RemoteSystemFolder> getFolders() {
         return folders;
     }
 
-    public void setFolders(List<FileSystemFolder> folders) {
+    public void setFolders(List<RemoteSystemFolder> folders) {
         this.folders = folders;
     }
 
-    public List<FileSystemDocument> getFiles() {
+    public List<RemoteSystemDocument> getFiles() {
         return files;
     }
 
-    public void setFiles(List<FileSystemDocument> files) {
+    public void setFiles(List<RemoteSystemDocument> files) {
         this.files = files;
     }
 
@@ -67,12 +70,14 @@ public class ListEntitiesResult {
 
     @Override
     public String toString() {
-        return "ListEntitiesResult{" +
-                "path='" + path + '\'' +
-                ", count=" + count +
-                ", folders=" + folders +
-                ", files=" + files +
-                '}';
+        final StringBuilder sb = new StringBuilder();
+        sb.append("ListEntitiesResult");
+        sb.append("{path='").append(path).append('\'');
+        sb.append(", count=").append(count);
+        sb.append(", folders=").append(folders);
+        sb.append(", files=").append(files);
+        sb.append('}');
+        return sb.toString();
     }
 }
 

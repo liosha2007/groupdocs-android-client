@@ -1,10 +1,6 @@
 package com.github.liosha2007.groupdocs.common;
 
 
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-
-import android.util.Base64;
 import com.google.gson.Gson;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -17,6 +13,8 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
@@ -47,21 +45,22 @@ public class ApiClient {
         this.pkey = pkey;
     }
 
-    public ApiClient(String pkey, String bpath) {
+    public ApiClient(String pkey, String cid) {
         this.pkey = pkey;
-        this.bpath = bpath;
+        this.cid = cid;
     }
 
-    public ApiClient(String pkey, String bpath, String cid) {
+    public ApiClient(String pkey, String cid, String bpath) {
         this.pkey = pkey;
-        this.bpath = bpath;
         this.cid = cid;
+        this.bpath = bpath;
     }
 
     public static String sign(String pkey, String toSign) throws Exception {
         Mac mac = Mac.getInstance(SIGN_ALG);
         mac.init(new SecretKeySpec(pkey.getBytes(ENC), SIGN_ALG));
-        String signature = new String(Base64.encode(mac.doFinal(toSign.getBytes(ENC)), Base64.NO_WRAP), ENC);
+        org.apache.commons.codec.binary.Base64 base64 = new org.apache.commons.codec.binary.Base64();
+        String signature = new String(base64.encode(mac.doFinal(toSign.getBytes(ENC))));
         if (signature.endsWith("=")) {
             signature = signature.substring(0, signature.length() - 1);
         }
@@ -69,6 +68,9 @@ public class ApiClient {
     }
 
     public static String signUrl(String pkey, String url) throws Exception {
+        if ("".equals(pkey)) {
+            return url;
+        }
         StringBuilder temp = new StringBuilder(url);
         URL resourceURL = new URL(url);
         String pathAndQuery = resourceURL.getFile();
@@ -209,14 +211,17 @@ public class ApiClient {
             }
         } else {
             String errMsg = EntityUtils.toString(httpResponse.getEntity());
+            if ("".equals(errMsg)) {
+                errMsg = "Code: " + Integer.toString(httpResponse.getStatusLine().getStatusCode()) + ", Cause: " + httpResponse.getStatusLine().getReasonPhrase();
+            }
             try {
                 JSONObject jsonObject = new JSONObject(errMsg);
                 if (jsonObject.has("error_message")) {
                     errMsg = jsonObject.getString("error_message");
                 }
-            } catch (Exception e) {
+            } finally {
+                throw new Exception(errMsg);
             }
-            throw new Exception(errMsg);
         }
         return toReturn;
     }

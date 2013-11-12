@@ -1,16 +1,16 @@
-package com.github.liosha2007.groupdocs.model;
+package com.github.liosha2007.groupdocs.model.storage;
 
-public class ListEntitiesResponse {
-    private ListEntitiesResult result = null;
+public class CreateFolderResponse {
+    private CreateFolderResult result = null;
     private String status = null;
     private String error_message = null;
     private Long composedOn = null;
 
-    public ListEntitiesResult getResult() {
+    public CreateFolderResult getResult() {
         return result;
     }
 
-    public void setResult(ListEntitiesResult result) {
+    public void setResult(CreateFolderResult result) {
         this.result = result;
     }
 
@@ -43,7 +43,7 @@ public class ListEntitiesResponse {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ListEntitiesResponse that = (ListEntitiesResponse) o;
+        CreateFolderResponse that = (CreateFolderResponse) o;
 
         if (composedOn != null ? !composedOn.equals(that.composedOn) : that.composedOn != null) return false;
         if (error_message != null ? !error_message.equals(that.error_message) : that.error_message != null)
@@ -65,12 +65,14 @@ public class ListEntitiesResponse {
 
     @Override
     public String toString() {
-        return "ListEntitiesResponse{" +
-                "result=" + result +
-                ", status='" + status + '\'' +
-                ", error_message='" + error_message + '\'' +
-                ", composedOn=" + composedOn +
-                '}';
+        final StringBuilder sb = new StringBuilder();
+        sb.append("CreateFolderResponse");
+        sb.append("{result=").append(result);
+        sb.append(", status='").append(status).append('\'');
+        sb.append(", error_message='").append(error_message).append('\'');
+        sb.append(", composedOn=").append(composedOn);
+        sb.append('}');
+        return sb.toString();
     }
 }
 
