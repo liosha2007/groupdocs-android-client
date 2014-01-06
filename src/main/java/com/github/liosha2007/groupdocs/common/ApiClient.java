@@ -201,7 +201,7 @@ public class ApiClient {
         int statusCode = httpResponse.getStatusLine().getStatusCode();
         if (statusCode == HttpStatus.SC_OK || statusCode == HttpStatus.SC_CREATED || statusCode == HttpStatus.SC_ACCEPTED) {
             if (FileStream.class.equals(returnType)) {
-                if (httpResponse.getFirstHeader("Transfer-Encoding") != null && httpResponse.getEntity().getContentLength() > 0) {
+                if (httpResponse.getFirstHeader("Transfer-Encoding") != null || httpResponse.getEntity().getContentLength() > 0) {
                     toReturn = (T) new FileStream(requestUri, httpResponse);
                 } else {
                     toReturn = null;

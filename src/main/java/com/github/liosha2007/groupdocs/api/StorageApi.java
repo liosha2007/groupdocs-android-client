@@ -2,8 +2,10 @@ package com.github.liosha2007.groupdocs.api;
 
 import com.github.liosha2007.groupdocs.common.ApiClient;
 import com.github.liosha2007.groupdocs.common.ApiException;
+import com.github.liosha2007.groupdocs.common.FileStream;
 import com.github.liosha2007.groupdocs.model.storage.*;
 
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -341,6 +343,80 @@ public class StorageApi {
         String response = apiClient.invokeAPI(resourcePath, "DELETE", new HashMap<String, String>(), null, new HashMap<String, String>(), String.class);
         if (response != null) {
             return (RestoreFromTrashResponse) ApiClient.deserealize(response, RestoreFromTrashResponse.class);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * /shared/files/{guid}?filename={fileName}&render={render}
+     *
+     * @param guid
+     * @param fileName
+     * @return
+     * @throws ApiException
+     */
+    public FileStream DownloadFile(String guid, String fileName) throws Exception {
+        if (apiClient == null || apiClient.getCid() == null) {
+            throw new ApiException("apiClient or cid is null");
+        }
+        if (fileName == null) {
+            throw new ApiException("missing required params");
+        }
+        String resourcePath = "/shared/files/{guid}";
+        // create path and map variables
+        resourcePath = resourcePath.replace("{guid}", guid);
+        // query params
+        Map<String, String> queryParams = new HashMap<String, String>();
+
+        if (fileName != null) {
+            queryParams.put("filename", fileName);
+        }
+//        queryParams.put("render", String.valueOf(render));
+        return apiClient.invokeAPI(resourcePath, "GET", queryParams, null, new HashMap<String, String>(), FileStream.class);
+    }
+
+    public UploadFileResponse UploadFile(String filePath, InputStream inputStream) throws Exception {
+        return UploadFile(filePath, new FileStream(inputStream), null);
+    }
+
+    /**
+     * @param filePath
+     * @param body
+     * @return
+     * @throws Exception
+     */
+    public UploadFileResponse UploadFile(String filePath, FileStream body) throws Exception {
+        return UploadFile(filePath, body, null);
+    }
+
+    /**
+     * /storage/{userId}/folders/{*path}?description={description}&callbackUrl={callbackUrl}
+     *
+     * @param filePath
+     * @param body
+     * @param fileDescription
+     * @return
+     * @throws Exception
+     */
+    public UploadFileResponse UploadFile(String filePath, FileStream body, String fileDescription) throws Exception {
+        if (apiClient == null || apiClient.getCid() == null) {
+            throw new ApiException("apiClient or cid is null");
+        }
+        if (filePath == null || body == null) {
+            throw new ApiException("missing required params");
+        }
+        String resourcePath = "/storage/{userId}/folders/{path}";
+        // create path and map variables
+        resourcePath = resourcePath.replace("{userId}", apiClient.getCid()).replace("{path}", filePath);
+        // query params
+        Map<String, String> queryParams = new HashMap<String, String>();
+        if (fileDescription != null) {
+            queryParams.put("description", fileDescription);
+        }
+        String response = apiClient.invokeAPI(resourcePath, "POST", new HashMap<String, String>(), body, new HashMap<String, String>(), String.class);
+        if (response != null) {
+            return (UploadFileResponse) ApiClient.deserealize(response, UploadFileResponse.class);
         } else {
             return null;
         }
