@@ -163,7 +163,9 @@ public class ApiClient {
                 InputStream inputStream = ((FileStream) body).getInputStream();
                 ((HttpPost) httpRequest).setEntity(new InputStreamEntity(inputStream, inputStream.available()));
             } else {
-                ((HttpPost) httpRequest).setEntity(new StringEntity(serealize(body)));
+                if (body != null){
+                    ((HttpPost) httpRequest).setEntity(new StringEntity(serealize(body)));
+                }
             }
         } else if ("PUT".equals(method)) {
             httpRequest = new HttpPut();

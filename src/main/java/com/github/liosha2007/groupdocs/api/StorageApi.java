@@ -356,7 +356,7 @@ public class StorageApi {
      * @return
      * @throws ApiException
      */
-    public FileStream DownloadFile(String guid, String fileName) throws Exception {
+    public FileStream downloadFile(String guid, String fileName) throws Exception {
         if (apiClient == null || apiClient.getCid() == null) {
             throw new ApiException("apiClient or cid is null");
         }
@@ -376,8 +376,8 @@ public class StorageApi {
         return apiClient.invokeAPI(resourcePath, "GET", queryParams, null, new HashMap<String, String>(), FileStream.class);
     }
 
-    public UploadFileResponse UploadFile(String filePath, InputStream inputStream) throws Exception {
-        return UploadFile(filePath, new FileStream(inputStream), null);
+    public UploadFileResponse uploadFile(String filePath, InputStream inputStream) throws Exception {
+        return uploadFile(filePath, new FileStream(inputStream), null);
     }
 
     /**
@@ -386,8 +386,8 @@ public class StorageApi {
      * @return
      * @throws Exception
      */
-    public UploadFileResponse UploadFile(String filePath, FileStream body) throws Exception {
-        return UploadFile(filePath, body, null);
+    public UploadFileResponse uploadFile(String filePath, FileStream body) throws Exception {
+        return uploadFile(filePath, body, null);
     }
 
     /**
@@ -399,7 +399,7 @@ public class StorageApi {
      * @return
      * @throws Exception
      */
-    public UploadFileResponse UploadFile(String filePath, FileStream body, String fileDescription) throws Exception {
+    public UploadFileResponse uploadFile(String filePath, FileStream body, String fileDescription) throws Exception {
         if (apiClient == null || apiClient.getCid() == null) {
             throw new ApiException("apiClient or cid is null");
         }
