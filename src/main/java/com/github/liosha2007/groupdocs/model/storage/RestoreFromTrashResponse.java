@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
-public class RestoreFromTrashResponse {
+import java.io.Serializable;
+
+public class RestoreFromTrashResponse implements Serializable {
     private RestoreFromTrashResult result = null;
     private String status = null;
     private String error_message = null;

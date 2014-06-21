@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.common;
 
-public class JobErrorInfo {
+import java.io.Serializable;
+
+public class JobErrorInfo implements Serializable {
     private Double job_id = null;
     private Double original_document_id = null;
     private Integer error_code = null;

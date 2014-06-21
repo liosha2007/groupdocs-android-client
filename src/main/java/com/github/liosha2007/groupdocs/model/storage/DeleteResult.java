@@ -1,5 +1,7 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
-public class DeleteResult {
+import java.io.Serializable;
+
+public class DeleteResult implements Serializable {
 }
 

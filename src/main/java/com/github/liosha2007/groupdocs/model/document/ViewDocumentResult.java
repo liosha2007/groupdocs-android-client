@@ -2,10 +2,11 @@ package com.github.liosha2007.groupdocs.model.document;
 
 import com.github.liosha2007.groupdocs.model.common.Dimension;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewDocumentResult {
+public class ViewDocumentResult implements Serializable {
     private String name = null;
     private Integer version = null;
     private Integer page_count = null;

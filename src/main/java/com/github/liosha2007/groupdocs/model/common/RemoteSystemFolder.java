@@ -1,9 +1,10 @@
 package com.github.liosha2007.groupdocs.model.common;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RemoteSystemFolder {
+public class RemoteSystemFolder implements Serializable {
     private Integer folder_count = null;
     private Integer file_count = null;
     private Double id = null;

@@ -3,10 +3,11 @@ package com.github.liosha2007.groupdocs.model.storage;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemFolder;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListEntitiesResult {
+public class ListEntitiesResult implements Serializable {
     private String path = null;
     private Integer count = null;
     private List<RemoteSystemFolder> folders = new ArrayList<RemoteSystemFolder>();

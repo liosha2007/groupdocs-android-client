@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
-public class DeleteToTrashResult {
+import java.io.Serializable;
+
+public class DeleteToTrashResult implements Serializable {
     private String from_path = null;
     private String to_path = null;
 

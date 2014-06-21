@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
-public class MoveFileResponse {
+import java.io.Serializable;
+
+public class MoveFileResponse implements Serializable {
     private MoveFileResult result = null;
     private String status = null;
     private String error_message = null;

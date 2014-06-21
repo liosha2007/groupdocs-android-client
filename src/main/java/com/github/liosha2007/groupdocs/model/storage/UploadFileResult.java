@@ -1,9 +1,11 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
+import java.io.Serializable;
+
 /**
  * Created by liosha on 06.01.14.
  */
-public class UploadFileResult {
+public class UploadFileResult implements Serializable {
     private String adj_name = null;
     private String url = null;
     private String type = null;

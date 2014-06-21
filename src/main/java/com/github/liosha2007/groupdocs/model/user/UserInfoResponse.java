@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.user;
 
-public class UserInfoResponse {
+import java.io.Serializable;
+
+public class UserInfoResponse implements Serializable {
     private UserInfoResult result = null;
     private String status = null;
     private String error_message = null;

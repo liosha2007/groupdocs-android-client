@@ -2,10 +2,11 @@ package com.github.liosha2007.groupdocs.model.shared;
 
 import com.github.liosha2007.groupdocs.model.common.SharedDocumentInfo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoadSharedDocumentsResult {
+public class LoadSharedDocumentsResult implements Serializable {
     private Integer count = null;
     private List<SharedDocumentInfo> documents = new ArrayList<SharedDocumentInfo>();
 

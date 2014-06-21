@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
-public class UploadWebResult {
+import java.io.Serializable;
+
+public class UploadWebResult implements Serializable {
     private String adj_name = null;
     private String url = null;
     private String type = null;

@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.document;
 
-public class ViewDocumentResponse {
+import java.io.Serializable;
+
+public class ViewDocumentResponse implements Serializable {
     private ViewDocumentResult result = null;
     private String status = null;
     private String error_message = null;

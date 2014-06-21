@@ -2,10 +2,11 @@ package com.github.liosha2007.groupdocs.model.shared;
 
 import com.github.liosha2007.groupdocs.model.common.UserInfo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShareDocumentResult {
+public class ShareDocumentResult implements Serializable {
     private UserInfo owner = null;
     private List<UserInfo> shared_users = new ArrayList<UserInfo>();
 

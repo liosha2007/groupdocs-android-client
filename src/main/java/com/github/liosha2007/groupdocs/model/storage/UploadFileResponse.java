@@ -1,9 +1,11 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
+import java.io.Serializable;
+
 /**
  * Created by liosha on 06.01.14.
  */
-public class UploadFileResponse {
+public class UploadFileResponse implements Serializable {
     private UploadFileResult result = null;
     private String status = null;
     private String error_message = null;

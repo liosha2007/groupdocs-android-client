@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.common;
 
-public class Dimension {
+import java.io.Serializable;
+
+public class Dimension implements Serializable {
     private Integer width = null;
     private Integer height = null;
 

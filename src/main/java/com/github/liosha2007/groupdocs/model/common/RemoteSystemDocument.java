@@ -1,9 +1,10 @@
 package com.github.liosha2007.groupdocs.model.common;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RemoteSystemDocument {
+public class RemoteSystemDocument implements Serializable {
     private String url = null;
     private Integer version = null;
     private String type = null;

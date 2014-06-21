@@ -2,7 +2,9 @@ package com.github.liosha2007.groupdocs.model.user;
 
 import com.github.liosha2007.groupdocs.model.common.UserInfo;
 
-public class UserInfoResult {
+import java.io.Serializable;
+
+public class UserInfoResult implements Serializable {
     private UserInfo user = null;
 
     public UserInfo getUser() {

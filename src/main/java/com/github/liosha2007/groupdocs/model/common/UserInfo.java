@@ -1,9 +1,10 @@
 package com.github.liosha2007.groupdocs.model.common;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserInfo {
+public class UserInfo implements Serializable {
     private String nickname = null;
     private String firstname = null;
     private String lastname = null;

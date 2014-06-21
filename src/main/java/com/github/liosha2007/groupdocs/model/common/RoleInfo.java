@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.common;
 
-public class RoleInfo {
+import java.io.Serializable;
+
+public class RoleInfo implements Serializable {
     private Double id = null;
     private String name = null;
 

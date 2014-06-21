@@ -2,7 +2,9 @@ package com.github.liosha2007.groupdocs.model.storage;
 
 import com.github.liosha2007.groupdocs.model.common.DocumentInfo;
 
-public class MoveFileResult {
+import java.io.Serializable;
+
+public class MoveFileResult implements Serializable {
     private DocumentInfo src_file = null;
     private DocumentInfo dst_file = null;
 

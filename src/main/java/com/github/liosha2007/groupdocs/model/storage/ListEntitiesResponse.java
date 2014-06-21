@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
-public class ListEntitiesResponse {
+import java.io.Serializable;
+
+public class ListEntitiesResponse implements Serializable {
     private ListEntitiesResult result = null;
     private String status = null;
     private String error_message = null;

@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.user;
 
-public class UpdateUserResult {
+import java.io.Serializable;
+
+public class UpdateUserResult implements Serializable {
     private String user_guid = null;
 
     public String getUser_guid() {

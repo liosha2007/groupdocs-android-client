@@ -2,10 +2,11 @@ package com.github.liosha2007.groupdocs.model.async;
 
 import com.github.liosha2007.groupdocs.model.common.JobDocumentsEntry;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoadJobResult {
+public class LoadJobResult implements Serializable {
     private Double id = null;
     private List<String> out_formats = new ArrayList<String>();
     private String actions = null;

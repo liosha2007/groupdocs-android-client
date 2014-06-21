@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.shared;
 
-public class ShareDocumentResponse {
+import java.io.Serializable;
+
+public class ShareDocumentResponse implements Serializable {
     private ShareDocumentResult result = null;
     private String status = null;
     private String error_message = null;

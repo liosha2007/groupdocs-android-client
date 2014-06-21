@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
-public class CreateFolderResponse {
+import java.io.Serializable;
+
+public class CreateFolderResponse implements Serializable {
     private CreateFolderResult result = null;
     private String status = null;
     private String error_message = null;

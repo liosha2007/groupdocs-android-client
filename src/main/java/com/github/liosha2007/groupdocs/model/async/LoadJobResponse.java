@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.async;
 
-public class LoadJobResponse {
+import java.io.Serializable;
+
+public class LoadJobResponse implements Serializable {
 
 
     private LoadJobResult result = null;

@@ -1,9 +1,10 @@
 package com.github.liosha2007.groupdocs.model.common;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JobInputDocument {
+public class JobInputDocument implements Serializable {
     private String status = null;
     private Long proc_date = null;
     private String output_formats = null;

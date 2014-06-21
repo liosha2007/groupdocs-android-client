@@ -1,5 +1,7 @@
 package com.github.liosha2007.groupdocs.model.storage;
 
-public class RestoreFromTrashResult {
+import java.io.Serializable;
+
+public class RestoreFromTrashResult implements Serializable {
 }
 

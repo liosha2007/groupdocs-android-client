@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.common;
 
-public class DocumentInfo {
+import java.io.Serializable;
+
+public class DocumentInfo implements Serializable {
     private String name = null;
     private Integer version = null;
     private Long size = null;

@@ -1,6 +1,8 @@
 package com.github.liosha2007.groupdocs.model.shared;
 
-public class LoadSharedDocumentsResponse {
+import java.io.Serializable;
+
+public class LoadSharedDocumentsResponse implements Serializable {
     private LoadSharedDocumentsResult result = null;
     private String status = null;
     private String error_message = null;

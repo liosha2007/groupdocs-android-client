@@ -1,9 +1,10 @@
 package com.github.liosha2007.groupdocs.model.common;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SharedDocumentInfo {
+public class SharedDocumentInfo implements Serializable {
     private String status = null;
     private UserInfo owner = null;
     private List<UserInfo> sharers = new ArrayList<UserInfo>();
